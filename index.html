@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HBD Novia!</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sacramento&family=Work+Sans:wght@100;300;400;600;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+    <style>
+        .font-handwriting {
+            font-family: 'Sacramento', cursive;
+        }
+
+        .font-body {
+            font-family: 'Work Sans', sans-serif;
+        }
+
+        .no-scroll {
+            overflow: hidden;
+        }
+
+        /* Custom Animation for Photo */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating-img {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body class="font-body bg-[#FDF7F2] text-slate-800 antialiased no-scroll">
+
+    <audio id="background-music" loop>
+        <source src="musik.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="cover" class="fixed inset-0 bg-[#FDF7F2] z-50 flex flex-col justify-center items-center transition-transform duration-1000 ease-in-out">
+        <div class="text-center p-6">
+            <p class="text-lg tracking-widest mb-4 text-slate-500 animate-pulse">SEBUAH PESAN UNTUK</p>
+            
+            <div class="w-48 h-48 mx-auto rounded-full overflow-hidden border-4 border-white shadow-xl mb-6 relative bg-slate-200">
+                <img src="https://api.mhcloud.biz.id/uploads/file-1763602880138-734493324.jpg" 
+                     onerror="this.src='https://via.placeholder.com/200?text=Foto+Novia'" 
+                     alt="Cover Photo" class="w-full h-full object-cover">
+            </div>
+
+            <h1 class="font-handwriting text-5xl sm:text-6xl text-slate-800 mb-2">Novia Rohmatullah</h1>
+            <p class="text-slate-500 mb-8">Ada sesuatu untukmu...</p>
+
+            <button onclick="openGreeting()" class="bg-slate-800 text-white px-8 py-3 rounded-full shadow-lg hover:bg-slate-700 transition transform hover:scale-105 flex items-center mx-auto gap-2">
+                <i class="fa-solid fa-envelope-open-text"></i> Buka Pesan
+            </button>
+        </div>
+    </div>
+
+    <main id="main-content" class="hidden opacity-0 transition-opacity duration-1000">
+        
+        <section class="min-h-screen relative flex items-center justify-center overflow-hidden bg-white">
+            <div class="absolute top-0 left-0 w-full h-full opacity-10">
+                <div class="absolute top-10 left-10 text-6xl">🎂</div>
+                <div class="absolute bottom-20 right-10 text-6xl">🎈</div>
+                <div class="absolute top-1/2 left-5 text-4xl">🎁</div>
+            </div>
+
+            <div class="container mx-auto px-6 text-center relative z-10">
+                <p class="text-xl text-slate-500 mb-2" data-aos="fade-down">Hari ini spesial banget...</p>
+                <h1 class="font-handwriting text-6xl sm:text-8xl mb-6 text-slate-800" data-aos="zoom-in">Happy Birthday!</h1>
+                
+                <div class="relative w-64 h-80 mx-auto mb-8 floating-img" data-aos="fade-up">
+                    <img src="https://api.mhcloud.biz.id/uploads/file-1763602582686-337082601.jpg" 
+                         onerror="this.src='https://via.placeholder.com/300x400?text=Foto+Utama'" 
+                         alt="Novia" class="w-full h-full object-cover rounded-2xl shadow-2xl border-8 border-white rotate-3 bg-slate-200">
+                </div>
+
+                <h2 class="text-2xl sm:text-3xl font-semibold mb-4">Novia Rohmatullah</h2>
+                <p class="text-slate-500 max-w-lg mx-auto">Selamat bertambah usia! Semoga hari ini menjadi awal dari tahun yang luar biasa untukmu.</p>
+            </div>
+            
+            <div class="absolute bottom-10 w-full text-center animate-bounce">
+                <i class="fa-solid fa-chevron-down text-slate-400"></i>
+            </div>
+        </section>
+
+        <section class="py-20 bg-[#FDF7F2]">
+            <div class="container mx-auto px-6">
+                <div class="max-w-3xl mx-auto bg-white p-8 sm:p-12 rounded-3xl shadow-xl relative" data-aos="fade-up">
+                    <div class="absolute -top-6 left-8 w-12 h-12 bg-slate-800 text-white flex items-center justify-center rounded-full text-2xl">
+                        <i class="fa-solid fa-quote-left"></i>
+                    </div>
+
+                    <h3 class="font-handwriting text-4xl mb-6 text-slate-800">Untuk Sahabatku,</h3>
+                    
+                    <div class="space-y-4 text-slate-600 leading-relaxed text-lg text-justify">
+                        <p>
+                            Hai! Selamat ulang tahun ya. Gak kerasa waktu cepat banget berlalu, dan sekarang kamu sudah melangkah ke usia yang baru.
+                        </p>
+                        <p>
+                            Maaf ya kalau gak ada kado yang mewah. Tapi percayalah, doa tulus dari aku selalu menyertai setiap langkahmu. Aku cuma pengen lihat kamu bahagia, sukses, dan selalu dikelilingi orang-orang baik.
+                        </p>
+                        <p>
+                            Terima kasih sudah menjadi teman yang menyenangkan. Semoga persahabatan kita terus awet sampai tua nanti.
+                        </p>
+                        <p class="font-semibold text-slate-800 mt-4">
+                            Tetaplah jadi Novia yang ceria dan baik hati.
+                        </p>
+                    </div>
+
+                    <div class="mt-8 text-right">
+                        <p class="font-handwriting text-3xl text-slate-800">- Dari Temanmu</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white overflow-hidden">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 class="font-handwriting text-5xl mb-3 text-slate-800">Harapan Di Usia Baru</h2>
+                    <p class="text-slate-500">Doa-doa terbaik spesial untukmu.</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="bg-slate-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 text-center group" data-aos="fade-up" data-aos-delay="100">
+                        <div class="w-16 h-16 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-4 group-hover:bg-blue-600 group-hover:text-white transition">
+                            <i class="fa-solid fa-chart-line"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-slate-800">Karir & Pendidikan</h3>
+                        <p class="text-slate-500 text-sm">Semoga segala urusan dimudahkan, karir makin cemerlang, dan ilmunya bermanfaat.</p>
+                    </div>
+
+                    <div class="bg-slate-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 text-center group" data-aos="fade-up" data-aos-delay="200">
+                        <div class="w-16 h-16 bg-pink-100 text-pink-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-4 group-hover:bg-pink-600 group-hover:text-white transition">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-slate-800">Kebahagiaan</h3>
+                        <p class="text-slate-500 text-sm">Semoga selalu didekatkan dengan kebahagiaan dan dijauhkan dari segala kesedihan.</p>
+                    </div>
+
+                    <div class="bg-slate-50 p-8 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-2 text-center group" data-aos="fade-up" data-aos-delay="300">
+                        <div class="w-16 h-16 bg-green-100 text-green-600 rounded-full flex items-center justify-center text-2xl mx-auto mb-4 group-hover:bg-green-600 group-hover:text-white transition">
+                            <i class="fa-solid fa-wallet"></i>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2 text-slate-800">Rezeki Lancar</h3>
+                        <p class="text-slate-500 text-sm">Semoga rezekinya mengalir deras seperti air, dompet tebal, dan berkah selalu.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-[#FDF7F2] text-center">
+            <div class="container mx-auto px-6">
+                <h2 class="font-handwriting text-5xl mb-8 text-slate-800" data-aos="fade-up">Make a Wish!</h2>
+                
+                <div class="flex flex-col sm:flex-row justify-center items-center gap-4" data-aos="fade-up" data-aos-delay="100">
+                    <button onclick="fireConfetti()" class="bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform transition hover:scale-105 flex items-center gap-2">
+                        <i class="fa-solid fa-cake-candles"></i> Aamiin Paling Kenceng!
+                    </button>
+                    
+                    <a href="https://wa.me/6281703660784?text=Makasih%20ya%20doa%20dan%20ucapannya%20:)" target="_blank" class="bg-white text-slate-800 border border-slate-300 hover:bg-slate-50 font-bold py-3 px-8 rounded-full shadow-lg transform transition hover:scale-105 flex items-center gap-2">
+                        <i class="fa-brands fa-whatsapp"></i> Balas Pesan
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-slate-800 text-white py-8 text-center text-sm">
+            <p class="opacity-70">Dibuat spesial untuk Novia.</p>
+        </footer>
+
+    </main>
+
+    <button id="music-btn" onclick="toggleMusic()" class="fixed bottom-5 right-5 bg-white text-slate-800 p-3 rounded-full shadow-xl z-50 hidden border border-slate-200">
+        <i class="fa-solid fa-music spin-slow"></i>
+    </button>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        const cover = document.getElementById('cover');
+        const mainContent = document.getElementById('main-content');
+        const audio = document.getElementById('background-music');
+        const musicBtn = document.getElementById('music-btn');
+        let isPlaying = false;
+
+        function openGreeting() {
+            cover.style.transform = 'translateY(-100%)';
+            mainContent.classList.remove('hidden');
+            
+            setTimeout(() => {
+                mainContent.classList.remove('opacity-0');
+                document.body.classList.remove('no-scroll');
+                playMusic();
+                AOS.init({ duration: 1000, once: true });
+                fireConfetti();
+            }, 500);
+        }
+
+        function playMusic() {
+            if(audio) {
+                audio.play().then(() => {
+                    isPlaying = true;
+                    musicBtn.classList.remove('hidden');
+                    musicBtn.innerHTML = '<i class="fa-solid fa-compact-disc fa-spin"></i>';
+                }).catch(err => {
+                    console.log("Autoplay prevented");
+                });
+            }
+        }
+
+        function toggleMusic() {
+            if (isPlaying) {
+                audio.pause();
+                musicBtn.innerHTML = '<i class="fa-solid fa-play"></i>';
+            } else {
+                audio.play();
+                musicBtn.innerHTML = '<i class="fa-solid fa-compact-disc fa-spin"></i>';
+            }
+            isPlaying = !isPlaying;
+        }
+
+        function fireConfetti() {
+            var count = 200;
+            var defaults = { origin: { y: 0.7 } };
+            function fire(particleRatio, opts) {
+                confetti(Object.assign({}, defaults, opts, {
+                    particleCount: Math.floor(count * particleRatio)
+                }));
+            }
+            fire(0.25, { spread: 26, startVelocity: 55, });
+            fire(0.2, { spread: 60, });
+            fire(0.35, { spread: 100, decay: 0.91, scalar: 0.8 });
+            fire(0.1, { spread: 120, startVelocity: 25, decay: 0.92, scalar: 1.2 });
+            fire(0.1, { spread: 120, startVelocity: 45, });
+        }
+    </script>
+
+    <style>
+        .fa-spin { animation: fa-spin 2s infinite linear; }
+    </style>
+</body>
+</html>
